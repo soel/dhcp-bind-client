@@ -16,7 +16,11 @@ Vagrant.configure(2) do |config|
 
   config.vbguest.auto_update = false
 
+  config.vm.hostname = "client1.example.com"
+
   config.vm.network "private_network", ip: "192.168.0.2"
 
+  config.vm.provision :shell, inline: "yum -y install bind-utils"
   config.vm.provision :shell, path: "provision/if.sh"
+  config.vm.provision :shell, inline: "service network restart"
 end

@@ -7,4 +7,5 @@ IPV6INIT="yes"
 NM_CONTROLLED="yes"
 ONBOOT="yes"
 TYPE="Ethernet"
+DHCP_HOSTNAME="client1"
 EOS
